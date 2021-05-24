@@ -1,4 +1,4 @@
-export type Hitory = {
+export type History = {
     id?: number,
     city: string,
     country: string,

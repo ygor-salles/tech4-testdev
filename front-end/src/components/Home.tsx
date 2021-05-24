@@ -2,23 +2,23 @@ import './styles.css';
 import React, { useState } from "react";
 import api from '../service/api';
 import axios from 'axios';
-import { Hitory } from '../models/history.model';
+import { History } from '../models/history.model';
 import ResultLeft from './ResultLeft';
 
 function Home() {
     const [cityName, setCity] = useState("");
     const [dataCity, setDataCity] = useState({});
-    const [lastCity, setLastCity] = useState([]);
-    const [topCity, setTopCity] = useState([]);
+    const [lastCity, setLastCity] = useState<History[]>([]);
+    const [topCity, setTopCity] = useState<{ city: string, qtd: string }[]>([]);
 
-    function converteTemperatura(kelvin: number){
+    function converteTemperatura(kelvin: number) {
         const celcius = kelvin - 273.15
         return parseFloat(celcius.toFixed(2))
     }
-    
-    async function buscarClima(cityName: string){
+
+    async function buscarClima(cityName: string) {
         const { data } = await axios(
-            `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&lang=pt&appid=70a59bf021f595348b10bbbe1a94da04`
+            `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&lang=pt&appid=d5a409b9a1b2eadfbf4525a057334903`
         )
         return data
     }
@@ -26,45 +26,46 @@ function Home() {
     const onSubmitForm = async (e: any) => {
         e.preventDefault();
         const body = { cityName };
-    
-        const clima = await buscarClima(body.cityName)
-        console.log(clima)
-        const objetoHistory: Hitory = {
-            city: body.cityName,
-            country: clima.sys.country,
-            humidity: clima.main.humidity,
-            temperature: converteTemperatura(clima.main.temp),
-            weather: clima.weather[0].description 
-        }
-        console.log(objetoHistory);
 
-        await api
-          .post("history", objetoHistory)
-          .then((response) => {
-            setDataCity(response.data);
-          })
-          .catch((error) => {
-            console.log(error);
-          });
+        buscarClima(body.cityName).then(async clima => {
+            const objetoHistory: History = {
+                city: body.cityName,
+                country: clima.sys.country,
+                humidity: clima.main.humidity,
+                temperature: converteTemperatura(clima.main.temp),
+                weather: clima.weather[0].description
+            }
     
-        await api
-          .get("history/topFive")
-          .then((response) => {
-            setTopCity(response.data);
-          })
-          .catch((error) => console.error(error));
+            await api
+                .post("history", objetoHistory)
+                .then((response) => {
+                    setDataCity(response.data);
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
     
-        await api.get("history/lastCities").then((response) => {
-          setLastCity(response.data);
-        });
-      };
+            await api
+                .get("history/topFive")
+                .then((response) => {
+                    setTopCity(response.data);
+                })
+                .catch((error) => console.error(error));
+    
+            await api.get("history/lastCities").then((response) => {
+                setLastCity(response.data);
+            });
+        })
+        .catch(e => console.log(e))
+        
+    };
 
     return (
         <>
             <div className="app-container">
                 <div className="left-container">
                     <h2>Dados sobre as cidades</h2>
-                    <form className="form-control" onSubmit={onSubmitForm}>
+                    <form  onSubmit={onSubmitForm}>
                         <input
                             type="text"
                             placeholder="Digite a cidade"
@@ -82,16 +83,20 @@ function Home() {
 
                 <div className="right-container">
                     <div className="top-cities">
-                        <h2>Cidades mais buscadas</h2>
+                        <h2>5 Cidades mais buscadas</h2>
                         <div className="top-cities-result">
-                            {/* <TopCities topCity={topCity} /> */}
+                            {topCity.map(elem => (
+                                <p key={elem.city}>{elem.city} - {elem.qtd} buscas</p>
+                            ))}
                         </div>
                     </div>
 
                     <div className="last-cities">
-                        <h2>Últimas cidades pesquisadas</h2>
+                        <h2>5 Últimas cidades pesquisadas</h2>
                         <div className="last-cities-results">
-                            {/* <LastCities lastCity={lastCity} /> */}
+                            {lastCity.map(elem => (
+                                <p key={elem.id}>{elem.city}</p>
+                            ))}
                         </div>
                     </div>
                 </div>

@@ -4,6 +4,8 @@
     padding-left: 45px;
     display: flex;
     align-items: center;
+    color: white;
+    font-size: x-large;
 }
 
 .app-container {
@@ -93,7 +95,7 @@
   /* Configuração do painel da direita */
   .right-container {
     width: 600px;
-    height: 660px;
+    height: 800px;
     background: linear-gradient(
       to bottom right,
       rgba(1, 23, 148, 0.7),
