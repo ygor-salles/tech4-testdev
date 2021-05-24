@@ -56,7 +56,7 @@ function Home() {
                 setLastCity(response.data);
             });
         })
-        .catch(e => console.log(e))
+        .catch(e => setDataCity(false))
         
     };
 
