@@ -4,7 +4,7 @@ import { HistoryController } from '../src/app/controllers/HistoryController'
 const router = Router();
 const historyController = new HistoryController();
 
-router.post('/', (req: Request, res: Response) => {
+router.get('/', (req: Request, res: Response) => {
     res.json({ message: 'Welcome api-tech4' })
 })
 
