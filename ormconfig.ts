@@ -31,10 +31,10 @@ if (process.env.NODE_ENV === 'development') {
               rejectUnauthorized: false,
             },
         },
-        migrations: ['build/database/migrations/*.js'],
-        entities: ['build/app/models/*.js'],
+        migrations: ['build/src/database/migrations/*.js'],
+        entities: ['build/src/app/models/*.js'],
         cli: {
-            migrationsDir: 'build/database/migrations'
+            migrationsDir: 'build/src/database/migrations'
         }
     }
 }
