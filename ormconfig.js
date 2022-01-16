@@ -1,4 +1,4 @@
-import 'dotenv/config';
+require('dotenv').config()
 
 let config = {}
 if (process.env.NODE_ENV === 'development') {
@@ -39,4 +39,4 @@ if (process.env.NODE_ENV === 'development') {
     }
 }
 
-export default config;
+module.exports = config;
