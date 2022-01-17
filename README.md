@@ -8,9 +8,10 @@
     <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <a href="#user-content-clipboard-instruções">Instruções</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-    <a href="#-comandos">Migrations</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-    <a href="#-modelagem">Modelagem</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-    <a href="#-collection">Collection requisições</a>
+    <a href="#%EF%B8%8F-comandos-básicos-para-as-migrations">Migrations</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#%EF%B8%8F-modelagem-da-aplicação">Modelagem</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#-gerar-o-build">Gerar o build</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#%EF%B8%8F-collection-das-requisições---insomnia">Collection requisições</a>
 </p>
  
 ----
@@ -109,4 +110,9 @@ yarn build
  ## ✈️ Collection das requisições - insomnia
  
  - As collections das requisições backend `Insomnia_2021-05-23.json` se econtra dentro da pasta `assets` deste projeto.
+
+----
+## 📌 Ajustes e melhorias
+
+Até o momento não há nenhuma nova feature para a api
 
