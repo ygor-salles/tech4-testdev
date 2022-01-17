@@ -12,6 +12,7 @@
     <a href="#%EF%B8%8F-modelagem-da-aplicação">Modelagem</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <a href="#-gerar-o-build">Gerar o build</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <a href="#%EF%B8%8F-collection-das-requisições---insomnia">Collection requisições</a>
+    <a href="#-ajustes-e-melhorias">Melhorias</a>
 </p>
  
 ----
