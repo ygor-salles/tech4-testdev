@@ -1,64 +1,112 @@
-# App teste-dev
+# tech4-api
 
-## Tecnologias utilizadas:
+<h4 align="center">
+    :computer: Api para registro e consulta de temperatura de cidade
+</h4>
 
-### Backend:
+<p align="center">
+    <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#user-content-clipboard-instruções">Instruções</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#-comandos">Migrations</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#-modelagem">Modelagem</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#-collection">Collection requisições</a>
+</p>
+ 
+----
+ ## 💻 Projeto
 
-- Linguagem: Typescript
-- Framewok: ExpressJS
-- ORM: Typeorm
-- Lib YUP para validação dos dados vindo da requisição
+API em ExpressJS. Aplicação backend para cadastramento de temperatura de cidades, e consulta das cidades mais pesquisadas
 
-### Frontend:
+----
+## :rocket: Tecnologias
 
-- Linguagem: Typescript:
-- Framework/Lib: ReactJS
-- API adicional: OpenWeatherMap para busca de clima da cidade
+- [Typescript](https://www.typescriptlang.org/)
+- [ExpressJS](https://expressjs.com/pt-br/)
+- [Typeorm](https://typeorm.io/)
+- [Docker](https://www.docker.com/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Yup](https://www.npmjs.com/package/yup)
+- [Nodemon](https://www.npmjs.com/package/nodemon)
+- [ts-node](https://www.npmjs.com/package/ts-node)
 
-## Executar o backend:
+----
+## :clipboard: Instruções
 
-### Instalar as dependencias e Configurar o projeto:
+### VARIÁVEIS DE AMBIENTE
 
-- Criar um banco no postgresql com o nome de api
+- Criar na raiz da pasta do projeto um arquivo `.env` e preencher as informações conforme se encontra no arquivo `.env.example`.
 
-- Realizar as configurações do banco (username, password, port) no arquivo ormconfig.json
+### DOCKER
 
-![Image](https://github.com/yasmin-carvalho/teste-dev/blob/master/api/assets/ormconfig.PNG "Arquivo de configuração do banco")
+- Após preenchida as variáveis de ambiente, subir o container do docker pelo terminal com o comando:
 
-- Instalar as dependencias:
+```bash
+docker-compose up
+```
+
+### DEPENDÊNCIAS
+
+- No terminal executar o comando para instalar as dependências:
 
 ```bash
 yarn
 ```
 
-- Rodar a migration:
+### MIGRATIONS
+
+- No terminal executar as migrations para criar as tabelas do banco de dados, com o comando:
 
 ```bash
 yarn typeorm migration:run
 ```
 
-### Rodar o projeto:
+### START
+
+- Finalizado! Basta agora executar a aplicação backend com o seguinte comando:
 
 ```bash
 yarn dev
 ```
 
-- Servidor front roda na porta 4000
-- (http://localhost:4000)
+- A Api estará rodando na porta conforme definido no arquivo .env em PORT, por padrão utilize
+  a porta 4000. `http://localhost:4000`
 
-## Executar o front
+----
+## ⚙️ Comandos básicos para as migrations
 
-## Instalar dependências:
-
-```bash
- yarn
-```
-
-## Rodar Projeto:
+- Criar uma migration
 
 ```bash
- yarn start
+yarn typeorm migration:create -n CreateExample
 ```
 
-- Servidor front roda na porta 3000
-- (http://localhost:3000)
+- Rodar as migrations
+
+```bash
+yarn typeorm migration:run
+```
+
+- Desfazer alterações da migration
+
+```bash
+yarn typeorm migration:revert
+```
+
+----
+## 📬 Gerar o build 
+
+```bash
+yarn build
+```
+
+----
+## 🛠️ Modelagem da aplicação
+
+<img src="./assets/modelagem-banco.PNG" alt="ModelagemBanco">
+
+----
+ ## ✈️ Collection das requisições - insomnia
+ 
+ - As collections das requisições backend `Insomnia_2021-05-23.json` se econtra dentro da pasta `assets` deste projeto.
+
