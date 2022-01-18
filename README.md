@@ -4,14 +4,18 @@
     :computer: Api para registro e consulta de temperatura de cidade
 </h4>
 
+<div align="center">
+    <img alt="Modelagem" src="./assets/modelagem-banco.PNG" >
+</div>
+
+
 <p align="center">
     <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <a href="#user-content-clipboard-instruções">Instruções</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <a href="#%EF%B8%8F-comandos-básicos-para-as-migrations">Migrations</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-    <a href="#%EF%B8%8F-modelagem-da-aplicação">Modelagem</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-    <a href="#-gerar-o-build">Gerar o build</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-    <a href="#%EF%B8%8F-collection-das-requisições---insomnia">Collection requisições</a>
+    <a href="#-gerar-o-build">Build</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#%EF%B8%8F-collection-das-requisições---insomnia">Requisições</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <a href="#-ajustes-e-melhorias">Melhorias</a>
 </p>
  
@@ -101,11 +105,6 @@ yarn typeorm migration:revert
 ```bash
 yarn build
 ```
-
-----
-## 🛠️ Modelagem da aplicação
-
-<img src="./assets/modelagem-banco.PNG" alt="ModelagemBanco">
 
 ----
  ## ✈️ Collection das requisições - insomnia
