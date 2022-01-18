@@ -4,11 +4,6 @@
     :computer: Api para registro e consulta de temperatura de cidade
 </h4>
 
-<div align="center">
-    <img alt="Modelagem" src="./assets/modelagem-banco.PNG" >
-</div>
-
-
 <p align="center">
     <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -18,6 +13,10 @@
     <a href="#%EF%B8%8F-collection-das-requisições---insomnia">Requisições</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <a href="#-ajustes-e-melhorias">Melhorias</a>
 </p>
+
+<div align="center">
+    <img alt="Modelagem" src="./assets/modelagem-banco.PNG" >
+</div>
  
 ----
  ## 💻 Projeto
